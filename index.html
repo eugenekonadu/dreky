@@ -1,619 +1,765 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <met#aeb3b8et="utf-8">
-        <title>EKY (Dreky)</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="keywords" content="dreky, wan, dreky wan, drek-tech, drek, tech, drek tech, drek-tech foundation, drek tech foundation, Eugene, Konadu, Yiadom, eugene, konadu, yiadom, Eugene Konadu, Eugene Konadu Yiadom, Github, hub, foundation">
-        <meta content="dreky, wan, dreky wan, drek-tech, drek, tech, drek tech, drek-tech foundation, drek tech foundation, Eugene, Konadu, Yiadom, eugene, konadu, yiadom, Eugene Konadu, Eugene Konadu Yiadom, Github, hub, foundation" name="description">
+<head>
+  <meta charset="utf-8">
+  <title>Dreky · Eugene Konadu Yiadom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="dreky, wan, dreky wan, drek-tech, drek, tech, Eugene, Konadu, Yiadom, software engineer, bioinformatics, BooZen, Ghana, portfolio">
+  <meta name="description" content="Portfolio of Eugene Konadu Yiadom (Dreky) — Software Engineer, Systems Builder, Bioinformatician, Social Impact Innovator based in Ghana.">
 
-        <!-- Favicon -->
-        <link href="img/logo.jpeg" rel="icon">
+  <!-- Favicon -->
+  <link href="img/logo.jpeg" rel="icon">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <!-- Libraries -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+  <!-- Our luxury skin -->
+  <link href="css/style.css" rel="stylesheet">
 
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center background-color-layer" style="background-image: url('img/dw3.jpg')">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+  <style>
+    /* Page-specific glass layout overrides */
+    body > .container { padding: 2rem 1rem; }
+
+    /* ─── SIDEBAR NAV LINKS ────────────────────────────── */
+    .sidebar-nav {
+      display: flex; flex-direction: column; gap: 2px;
+      margin: 1rem 0;
+    }
+    .sidebar-nav a {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-faint); padding: 6px 10px; border-radius: 6px;
+      font-weight: 500; transition: var(--transition);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sidebar-nav a::before {
+      content:''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--text-faint); flex-shrink:0; transition: var(--transition);
+    }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      color: var(--gold); background: rgba(196,162,93,0.08);
+    }
+    .sidebar-nav a:hover::before, .sidebar-nav a.active::before {
+      background: var(--gold);
+    }
+
+    /* ─── PROFILE IMAGE WRAPPER ────────────────────────── */
+    .profile-img-wrap {
+      position: relative; margin-bottom: 1.2rem;
+    }
+    .profile-img-wrap::after {
+      content:''; position:absolute; inset:6px;
+      border-radius: calc(var(--r-md) + 2px);
+      border: 1px dashed rgba(196,162,93,0.25);
+      pointer-events:none;
+    }
+    .profile-img-wrap img {
+      border-radius: var(--r-md) !important;
+      width:100%; display:block;
+    }
+
+    /* ─── AVAILABILITY BADGE ────────────────────────────── */
+    .avail-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 1rem;
+      background: rgba(63,214,200,0.1); border: 1px solid rgba(63,214,200,0.3);
+      font-size: 0.7rem; color: var(--teal); letter-spacing: 0.1em;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .avail-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0%,100%{ box-shadow: 0 0 0 0 rgba(63,214,200,0.5); }
+      50%    { box-shadow: 0 0 0 6px rgba(63,214,200,0); }
+    }
+
+    /* ─── SIDEBAR BOTTOM BUTTONS ───────────────────────── */
+    .sidebar-btns {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto;
+    }
+    .sidebar-btns a {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 10px 8px;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 500; border-radius: var(--r-sm);
+      border: 1px solid var(--border); color: var(--text-muted);
+      transition: var(--transition); text-decoration: none;
+    }
+    .sidebar-btns a:hover { border-color: var(--border-h); color: var(--gold); background: rgba(196,162,93,0.07); }
+
+    /* ─── SECTION EYEBROW + TITLE ──────────────────────── */
+    .s-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--teal); display: block; margin-bottom: 0.4rem;
+    }
+    .s-label::before { content:'// '; color: var(--text-faint); }
+
+    /* ─── EXPERIENCE SECTION ────────────────────────────── */
+    .tl-wrap { position: relative; padding-left: 1.8rem; }
+    .tl-wrap::before {
+      content:''; position:absolute; left:0; top:8px; bottom:8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold-dk), var(--border), transparent);
+    }
+    .tl-item { position: relative; padding-bottom: 2rem; }
+    .tl-item::before {
+      content:''; position:absolute; left: -1.8rem; top: 6px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(196,162,93,0.18);
+    }
+    .tl-date {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      color: var(--teal); letter-spacing: 0.12em; text-transform:uppercase;
+      margin-bottom: 4px;
+    }
+    .tl-role { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .tl-org  { font-size: 0.82rem; color: var(--gold); font-weight: 500; margin-bottom: 8px; }
+    .tl-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; }
+    .tl-desc ul { padding-left: 1.2rem; }
+    .tl-desc li { margin-bottom: 4px; }
+
+    /* ─── PROJECT CARD ──────────────────────────────────── */
+    .proj-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 11px; border-radius: 50px; margin-bottom: 0.8rem;
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+    }
+    .proj-tag.gold   { background:rgba(196,162,93,0.12);border:1px solid rgba(196,162,93,0.28);color:var(--gold); }
+    .proj-tag.teal   { background:rgba(63,214,200,0.09);border:1px solid rgba(63,214,200,0.22);color:var(--teal); }
+    .proj-tag.purple { background:rgba(130,80,200,0.09);border:1px solid rgba(130,80,200,0.22);color:#b08ce8; }
+    .proj-tag.red    { background:rgba(196,66,93,0.09); border:1px solid rgba(196,66,93,0.22); color:var(--crimson); }
+    .proj-dot { width:5px;height:5px;border-radius:50%;background:currentColor;animation:pulse-dot 2s infinite; }
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+    .proj-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 600; color: var(--text);
+      margin-bottom: 4px;
+    }
+    .proj-sub { font-size: 0.78rem; color: var(--gold); font-weight: 500; margin-bottom: 0.8rem; letter-spacing:0.04em; }
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 1rem; }
+    .chip {
+      padding: 3px 9px; border-radius: 5px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      font-family: var(--font-mono); font-size: 0.67rem; color: var(--text-muted);
+      transition: var(--transition);
+    }
+    .chip:hover { border-color: var(--border-h); color: var(--gold); }
+
+    /* ─── CONTACT LINKS ─────────────────────────────────── */
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.3rem;
+      background: var(--surface);
+      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--border); border-radius: var(--r-md);
+      margin-bottom: 0.8rem; transition: var(--transition);
+    }
+    .contact-link:hover { border-color: var(--border-h); transform: translateX(5px); }
+    .contact-link-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(196,162,93,0.1); border: 1px solid rgba(196,162,93,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .contact-link-text { font-size: 0.88rem; color: var(--text); font-weight: 500; }
+    .contact-link-sub  { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ─── GALLERY BADGE ─────────────────────────────────── */
+    .gallery-badge {
+      display: inline-block;
+      font-family: var(--font-mono); font-size: 0.68rem;
+      letter-spacing: 0.1em; color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media(max-width:991.98px){
+      body > .container { padding: 1rem; }
+      .sidebar-btns { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:576px){
+      .sidebar-btns { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Spinner -->
+  <div id="spinner" class="show position-fixed w-100 vh-100 top-0 start-0 d-flex align-items-center justify-content-center" style="z-index:99999;background:var(--bg)">
+    <div style="text-align:center">
+      <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--gold);letter-spacing:0.08em;margin-bottom:1rem">Dreky.</div>
+      <div style="width:40px;height:40px;border:2px solid rgba(196,162,93,0.2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto"></div>
+    </div>
+  </div>
+  <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+
+      <!-- ─── SIDEBAR ──────────────────────────────────────── -->
+      <div class="col-lg-4 sticky-lg-top" style="z-index:10">
+        <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
+
+          <!-- Profile image -->
+          <div class="profile-img-wrap">
+            <a href="eky.html">
+              <img src="img/dreky.jpg" alt="Eugene Konadu Yiadom — Dreky">
+            </a>
+          </div>
+
+          <!-- Availability -->
+          <div class="avail-badge d-inline-flex mx-auto">
+            <span class="avail-dot"></span> Available for Work
+          </div>
+
+          <!-- Name -->
+          <h3 class="mt-1 mb-1">
+            <a href="eky.html">Eugene Konadu Yiadom</a><br>
+            <small>(Dreky Wan)</small>
+          </h3>
+
+          <!-- Typed role -->
+          <div class="mb-3" style="height:22px">
+            <span class="typed-text-output"></span>
+            <div class="typed-text d-none">Software Engineer, Systems Builder, Bioinformatician, Data Scientist, Web Developer (Full Stack), Research Analyst</div>
+          </div>
+
+          <!-- Sidebar nav -->
+          <nav class="sidebar-nav text-start">
+            <a href="#profile">Profile</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <!-- Social icons -->
+          <div class="d-flex justify-content-center gap-2 my-3">
+            <a class="btn btn-square" href="https://twitter.com/EugeneKonaduYi1" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-square" href="https://www.facebook.com/eugene.konadu.14" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-square" href="https://www.linkedin.com/in/dreky" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-square" href="https://www.instagram.com/dreky_wan" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-square" href="https://eugenekonadu.github.io/dreky/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="sidebar-btns mt-auto">
+            <a href="img/Resume_or_CV.pdf" target="_blank"><i class="fas fa-download" style="font-size:0.7rem"></i> Download CV</a>
+            <a href="#contact" class="btn-scroll"><i class="fas fa-envelope" style="font-size:0.7rem"></i> Contact Me</a>
+          </div>
+
         </div>
-        <!-- Spinner End -->
+      </div>
+      <!-- ─── END SIDEBAR ───────────────────────────────────── -->
 
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4 sticky-lg-top vh-100">
-                    <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
-                        <a target="_blank" href="eky.html"><img class="w-100 img-fluid mb-4" src="img/dreky.jpg" alt="Image"></a>
-                        <h3 class="text-primary mt-2">
-                            <a target="_blank" href="eky.html">Eugene Konadu Yiadom <br /><small>(Dreky Wan)</small></a>
-                        </h3>
-                        <div class="mb-4" style="height: 22px;">
-                            <h4 class="typed-text-output d-inline-block text-light"></h4>
-                            <div class="typed-text d-none">Data Scientist | Data Analyst | Web Developer (Full stack) | Research Analyst | Research Assistant</div>
-                        </div>
-                        <div class="d-flex justify-content-center mt-auto mb-3">
-                            <a class="btn btn-secondary btn-square mx-1" href="https://twitter.com/EugeneKonaduYi1"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/eugene.konadu.14"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/dreky"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/dreky_wan"><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="d-flex align-items-end justify-content-between border-top">
-                            <a href="img/Resume_or_CV.pdf" target="_blank" class="btn w-50 border-end">Download CV</a>
-                            <a href="#contact" class="btn w-50 btn-scroll">Contact Me</a>
-                        </div>
+      <!-- ─── MAIN CONTENT ──────────────────────────────────── -->
+      <div class="col-lg-8">
+
+        <!-- ══ PROFILE ═══════════════════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="profile">
+          <span class="s-label">About Me</span>
+          <h1 class="title pb-3 mb-4">Profile</h1>
+
+          <p class="profile-bio">
+            Passionate and motivated <strong>biochemistry graduate</strong> with a strong interest in bioinformatics and computational biology, now evolving into a <strong>systems-focused software engineer</strong> building scalable, real-world platforms that solve meaningful problems across Africa. Possesses a BSc (Hons) in Biochemistry from the University of Cape Coast, <strong>Graduated Cum Laude</strong>. My work sits at the intersection of technology, infrastructure, and social impact — with hands-on experience spanning backend engineering, molecular docking, and distributed systems design.
+          </p>
+
+          <!-- Info grid -->
+          <div class="info-grid mb-4">
+            <div class="info-item"><span class="label">Name:</span> Eugene K. Yiadom</div>
+            <div class="info-item"><span class="label">Birthday:</span> 21 May 1997</div>
+            <div class="info-item"><span class="label">Degree:</span> BSc Biochemistry (Hons)</div>
+            <div class="info-item"><span class="label">Experience:</span> 3+ Years</div>
+            <div class="info-item"><span class="label">Phone:</span> +233 (0) 59 118 6949</div>
+            <div class="info-item"><span class="label">Email:</span> eugenekonadu58@gmail.com</div>
+            <div class="info-item"><span class="label">Location:</span> Mampong-Akuapem, Ghana</div>
+            <div class="info-item"><span class="label">Freelance:</span> <span style="color:var(--teal)">✓ Available</span></div>
+          </div>
+
+          <!-- Stats row -->
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="stat-box">
+                <h1 data-toggle="counter-up">3</h1>
+                <div><p class="mb-0">Years of</p><h5>Experience</h5></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-box">
+                <h1 data-toggle="counter-up">8</h1>
+                <div><p class="mb-0">Industry</p><h5>Verticals</h5></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-box">
+                <h1 data-toggle="counter-up">24</h1>
+                <div><p class="mb-0">Completed</p><h5>Projects</h5></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ══ END PROFILE ═══════════════════════════════════ -->
+
+
+        <!-- ══ SKILLS ════════════════════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="skills">
+          <span class="s-label">Technical Expertise</span>
+          <h1 class="title pb-3 mb-4">Area of Expertise</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Research &amp; Laboratory Skills</p><p>95%</p></div>
+                <div class="progress"><div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Experimental Design &amp; Data Interpretation</p><p>97%</p></div>
+                <div class="progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>PCR, Gel Electrophoresis, Sequencing</p><p>88%</p></div>
+                <div class="progress"><div class="progress-bar bg-warning" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Bioinformatics Tools &amp; Software</p><p>95%</p></div>
+                <div class="progress"><div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Project Management &amp; Collaboration</p><p>99%</p></div>
+                <div class="progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Data Analysis &amp; Visualization</p><p>85%</p></div>
+                <div class="progress"><div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Programming &amp; Scripting Languages</p><p>95%</p></div>
+                <div class="progress"><div class="progress-bar bg-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Machine Learning &amp; Artificial Intelligence</p><p>71%</p></div>
+                <div class="progress"><div class="progress-bar bg-danger" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Databases &amp; Data Management</p><p>77%</p></div>
+                <div class="progress"><div class="progress-bar bg-info" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+              <div class="skill mb-4">
+                <div class="d-flex justify-content-between"><p>Software Development &amp; DevOps</p><p>90%</p></div>
+                <div class="progress"><div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech stack chips -->
+          <div class="mt-3">
+            <p class="s-label" style="margin-bottom:0.8rem">Languages &amp; Frameworks</p>
+            <div>
+              <span class="chip">Python · Django</span><span class="chip">Go (Golang)</span>
+              <span class="chip">JavaScript · React</span><span class="chip">PHP · Laravel</span>
+              <span class="chip">C++</span><span class="chip">R</span>
+              <span class="chip">SQL · PostgreSQL</span><span class="chip">HTML · CSS · SCSS</span>
+              <span class="chip">Biopython</span><span class="chip">AutoDock Vina</span>
+              <span class="chip">PyRx · PyMol</span><span class="chip">Linux · PowerShell</span>
+              <span class="chip">Docker</span><span class="chip">Redis · Celery</span>
+              <span class="chip">WebSockets</span>
+            </div>
+          </div>
+        </section>
+        <!-- ══ END SKILLS ════════════════════════════════════ -->
+
+
+        <!-- ══ EXPERIENCE ════════════════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="experience">
+          <span class="s-label">Career Path</span>
+          <h1 class="title pb-3 mb-4">Experience</h1>
+
+          <div class="tl-wrap">
+            <div class="tl-item">
+              <div class="tl-date">2023 – Present</div>
+              <div class="tl-role">Software Engineer &amp; Systems Architect</div>
+              <div class="tl-org">BooZen SaaS Platform · Independent</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Architecting a multi-tenant SaaS POS platform targeting 8 industry verticals across Ghana</li>
+                  <li>Django + Next.js stack with schema-per-tenant isolation, subdomain routing, Mobile Money integrations</li>
+                  <li>Designing offline-first POS, white-labeling, and GRA e-VAT compliance modules</li>
+                  <li>Building custom Go container runtime (Drek) from first principles</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2023 – Present</div>
+              <div class="tl-role">Associate Manager &amp; Financial Consultant</div>
+              <div class="tl-org">Prudential Life Insurance Ghana</div>
+              <div class="tl-desc">Providing financial advisory services and long-term planning strategies, combining analytical thinking with people-centered solutions and maintaining strong client relationships.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Nov 2022 – Oct 2023</div>
+              <div class="tl-role">Medical Laboratory Scientist (Intern)</div>
+              <div class="tl-org">Tetteh Quarshie Memorial Hospital · Eastern Region</div>
+              <div class="tl-desc">
+                <ul>
+                  <li>Maintained lab information systems and assisted in equipment troubleshooting</li>
+                  <li>Supported digital records management with quality control procedures</li>
+                  <li>Service Personals Representative; led community health screening drives (Diabetes, Hepatitis, HIV)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">May – Jul 2021</div>
+              <div class="tl-role">Laboratory Scientist (Attachment)</div>
+              <div class="tl-org">Kintampo Health Research Centre · Bono East</div>
+              <div class="tl-desc">Engaged in data management and result tracking. Digitized patient sample records and processing workflows using Microsoft Excel and Access.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Apr 2017 – Jul 2018</div>
+              <div class="tl-role">Teacher &amp; Head of Students Leadership</div>
+              <div class="tl-org">Divaid International School · Ashanti Region</div>
+              <div class="tl-desc">Taught integrated science, mathematics, and computer literacy to 43+ students per term. Organized computer workshops and coordinated grading with 3 teaching assistants.</div>
+            </div>
+          </div>
+        </section>
+        <!-- ══ END EXPERIENCE ════════════════════════════════ -->
+
+
+        <!-- ══ RESEARCH INTEREST ═════════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="research">
+          <span class="s-label">Academic Research</span>
+          <h1 class="title pb-3 mb-4">Research Interests</h1>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">🧬</div>
+                <h5>Cancer Biomarker Discovery</h5>
+                <p>Application of computational methods and AI in the identification of predictive and prognostic cancer biomarkers for personalized treatment.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">🦠</div>
+                <h5>SARS-CoV-2 Drug Screening</h5>
+                <p>Structural-based virtual screening to identify potential inhibitors of SARS-CoV-2 main proteases from natural products and synthetic drugs.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">🔬</div>
+                <h5>Cancer Genomics</h5>
+                <p>Investigating driver mutations, biomarker discovery, and personalized medicine approaches in cancer genomics.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">💉</div>
+                <h5>Diabetes &amp; Gene Therapy</h5>
+                <p>Advancements in diabetes care through interdisciplinary synergy between gene therapy, bioinformatics, and precision molecular interventions.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">🫀</div>
+                <h5>Hepatitis Virus Research</h5>
+                <p>In vitro and in silico studies of natural products as potential inhibitors of Hepatitis C and B viruses to minimize cirrhosis and promote liver health.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="research-card">
+                <div class="icon">🐍</div>
+                <h5>Snakebite Treatment</h5>
+                <p>In silico studies of bioactive compounds from <em>Azadirachta indica</em> on phospholipase A2 as a potential target for snakebite treatment. <a href="in_silico.html" style="font-size:0.75rem;color:var(--teal)">View Project →</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ══ END RESEARCH ══════════════════════════════════ -->
+
+
+        <!-- ══ SUBSCRIBE ══════════════════════════════════════ -->
+        <section class="wow fadeInUp" data-wow-delay="0.1s">
+          <div class="bg-secondary text-center p-5">
+            <h1 style="font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--text);margin-bottom:0.5rem">Subscribe to My Newsletter</h1>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem">Get my latest articles, research findings and project updates in your inbox.</p>
+            <div class="position-relative" style="max-width:420px;margin:0 auto">
+              <input id="email-input" type="email" placeholder="your@email.com" class="form-control" style="padding-right:110px!important;border-radius:50px!important">
+              <button id="subscribe-btn" type="button" class="btn btn-primary position-absolute top-0 end-0" style="margin:4px;border-radius:50px!important;padding:6px 20px!important;font-size:0.8rem!important">Subscribe</button>
+            </div>
+          </div>
+        </section>
+        <!-- ══ END SUBSCRIBE ════════════════════════════════ -->
+
+
+        <!-- ══ PROJECTS / SERVICES ═══════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="projects">
+          <span class="s-label">Core Work</span>
+          <h1 class="title pb-3 mb-4">Featured Projects</h1>
+          <div class="row g-4">
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag gold mb-2"><span class="proj-dot"></span>In Development</div>
+                <i class="fa fa-2x fa-server mx-auto mb-3"></i>
+                <div class="proj-name">BooZen</div>
+                <div class="proj-sub">Multi-Tenant SaaS POS Platform</div>
+                <p>A modern, scalable SaaS platform targeting 8 industry verticals in Ghana — with Mobile Money, offline-first POS, GRA e-VAT compliance, and white-labeling.</p>
+                <div class="proj-stack">
+                  <span class="chip">Django</span><span class="chip">Next.js</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag teal mb-2"><span class="proj-dot"></span>Active Build</div>
+                <i class="fab fa-2x fa-docker mx-auto mb-3"></i>
+                <div class="proj-name">Drek</div>
+                <div class="proj-sub">Custom Container Runtime (Go)</div>
+                <p>A lightweight container runtime built from scratch in Go — implementing namespace isolation, cgroups resource limiting, filesystem isolation, and volume mounting.</p>
+                <div class="proj-stack">
+                  <span class="chip">Go</span><span class="chip">Linux namespaces</span><span class="chip">cgroups</span><span class="chip">chroot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag purple mb-2"><span class="proj-dot"></span>Design Phase</div>
+                <i class="fab fa-2x fa-android mx-auto mb-3"></i>
+                <div class="proj-name">HAAID</div>
+                <div class="proj-sub">Hospital Administrative AI System</div>
+                <p>An AI-powered system to improve hospital administration and workflow efficiency, integrating intelligent decision support for healthcare environments.</p>
+                <div class="proj-stack">
+                  <span class="chip">Python</span><span class="chip">Django</span><span class="chip">AI/ML</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag red mb-2">🌍 NGO Initiative</div>
+                <i class="fa fa-2x fa-search mx-auto mb-3"></i>
+                <div class="proj-name">Pharmaco-Plant</div>
+                <div class="proj-sub">Bioinformatics Analyzer</div>
+                <p>An analyzer implementing bioinformatics, pharmacology, AI and ML to analyze medicinal plants for drug discovery and pharmacological purposes.</p>
+                <div class="proj-stack">
+                  <span class="chip">Python</span><span class="chip">Biopython</span><span class="chip">AutoDock</span><span class="chip">ML</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag gold mb-2">🛒 E-Commerce</div>
+                <i class="fa fa-2x fa-laptop-code mx-auto mb-3"></i>
+                <div class="proj-name">Unihub Mall</div>
+                <div class="proj-sub">University E-Commerce Platform</div>
+                <p>An e-commerce website for universities in Ghana, designed to make student campus life hustle-free with a seamless online shopping experience.</p>
+                <div class="proj-stack">
+                  <span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">React</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="service-item">
+                <div class="proj-tag teal mb-2">🎓 Foundation</div>
+                <i class="fa fa-2x fa-edit mx-auto mb-3"></i>
+                <div class="proj-name">Drek-Tech</div>
+                <div class="proj-sub">Foundation &amp; Mentorship</div>
+                <p>Drek-Tech Foundation aims to mentor Africans — especially Ghanaians — in information technology, coding, and systems engineering.</p>
+                <div class="proj-stack">
+                  <span class="chip">Community</span><span class="chip">Education</span><span class="chip">Tech</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- ══ END PROJECTS ══════════════════════════════════ -->
+
+
+        <!-- ══ GALLERY ════════════════════════════════════════ -->
+        <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" id="gallery">
+          <span class="s-label">Visual Archive</span>
+          <h1 class="title pb-3 mb-2">Gallery</h1>
+          <p class="gallery-badge">// Research documentation &amp; personal moments</p>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="row mb-3">
+                <div class="col-12 text-center">
+                  <ul class="list-inline mb-4" id="portfolio-flters">
+                    <li class="btn active" data-filter="*"><i class="fa fa-star me-2"></i>All</li>
+                    <li class="btn" data-filter=".research"><i class="fa fa-laptop-code me-2"></i>Research</li>
+                    <li class="btn" data-filter=".personal"><i class="fa fa-mobile-alt me-2"></i>Personal</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row portfolio-container g-3">
+                <div class="col-md-6 mb-2 portfolio-item research">
+                  <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/bind_pla2.jpg" alt="Molecular binding — PLA2 research" style="border-radius:var(--r-md)">
+                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                      <a href="img/bind_pla2.jpg" data-lightbox="portfolio" data-title="Molecular Binding — PLA2 Research"><i class="bi bi-plus-circle text-light" style="font-size:2.5rem"></i></a>
                     </div>
+                  </div>
                 </div>
-                <div class="col-lg-8">
-                    <!-- Profile Start -->
-                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Profile</h1>
-                        <p class="text-justify" style="text-align: justify;">
-                            Passionate and motivated biochemistry graduate with a
-                            strong interest in bioinformatics and computational
-                            biology. Possesses a Bachelor of Science (Hons) in
-                            Biochemistry from the University of Cape Coast with a
-                            track record of academic excellence. Extensive research
-                            experience in computational methods, laboratory work, and
-                            data analysis. Proven abilities in interdisciplinary and
-                            collaborative research, and hands-on experience in
-                            experimental methods. Adept at using various
-                            bioinformatics tools and software applications. Eager to
-                            contribute to scientific advancement through a PhD in
-                            Bioinformatics and Computational Biology, focusing on the
-                            development and application of computational methods in
-                            biological and health sciences.
-                        </p>
-                        <div class="row mb-4">
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Name:</span> Eugene Konadu Yiadom
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Birthday:</span> 21 May 1997
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Degree:</span> Bachelor
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Experience:</span> 3 Years
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Phone:</span> +233 (0) 591 186 949
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Email:</span> eugene.yiadom@stu.ucc.edu.gh
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Address:</span> Abotakyi, Akuapem Mampong, Ghana
-                            </div>
-                            <div class="col-sm-6 py-1">
-                                <span class="fw-medium text-primary">Freelance:</span> Available
-                            </div>
-                        </div>
-                        <div class="row g-4">
-                            <div class="col-md-4 col-lg-6 col-xl-4">
-                                <div class="d-flex bg-secondary p-4">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">3</h1>
-                                    <div class="ps-3">
-                                        <p class="mb-0">Years of</p>
-                                        <h5 class="mb-0">Experience</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-lg-6 col-xl-4">
-                                <div class="d-flex bg-secondary p-4">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">141</h1>
-                                    <div class="ps-3">
-                                        <p class="mb-0">Happy</p>
-                                        <h5 class="mb-0">Clients</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-lg-6 col-xl-4">
-                                <div class="d-flex bg-secondary p-4">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">24</h1>
-                                    <div class="ps-3">
-                                        <p class="mb-0">Complete</p>
-                                        <h5 class="mb-0">Projects</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Profile End -->
-
-                    <!-- Skills Start -->
-                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Area of Expertise</h1>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Research and Laboratory Skills</p>
-                                        <p class="mb-2">95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Experimental design, Data interpretation</p>
-                                        <p class="mb-2">97%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">HPLC, PCR, Gel electrophoresis, Sequencing</p>
-                                        <p class="mb-2">88%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Bioinformatics Tools and Softwares</p>
-                                        <p class="mb-2">95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Project Management and Collaboration</p>
-                                        <p class="mb-2">99%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Data Analysis and Visualization</p>
-                                        <p class="mb-2">85%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Programming and Scripting Languages</p>
-                                        <p class="mb-2">95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Machine Learning, Artificial Intelligence</p>
-                                        <p class="mb-2">71%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Databases and Data Management</p>
-                                        <p class="mb-2">77%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <div class="skill mb-4">
-                                    <div class="d-flex justify-content-between">
-                                        <p class="mb-2">Software Development and Version Control</p>
-                                        <p class="mb-2">82%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Skills End -->
-
-                    <!-- Research Experience Start -->
-                    <section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Research Projects</h1>
-                        <div class="border-start border-2 border-light pt-2 ps-5">
-                            <div class="position-relative mb-4">
-                                <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                                <h5 class="mb-1"><a target="_blank" href="in_silico.html">In silico studies of bioactive compounds of <i>azadirachta indica</i> 
-                                    on phospholipase a2 as a potential target for snakebite treatment.</a></h5>
-                                <p class="text-justify" style="text-align: justify;">Snakebites represent a significant global health issue,
-                                    particularly in regions with a high incidence of
-                                    venomous snake species. Phospholipase A2 (PLA2) enzymes
-                                    found in snake venoms play a crucial role in
-                                    envenomation by disrupting cell membranes and causing
-                                    tissue damage. Developing effective treatments for
-                                    snakebites is a priority, and natural products have long
-                                    been explored as potential sources of antidotes.
-                                    <i>Azadirachta indica</i>, commonly known as neem, is a tree
-                                    with a rich history in traditional medicine, known for
-                                    its diverse array of bioactive compounds. This thesis
-                                    investigates the insilico interactions between bioactive
-                                    compounds from <i>Azadirachta indica</i> and Phospholipase A2
-                                    enzymes from various snake species, with the aim of
-                                    identifying potential inhibitors for snakebite
-                                    treatment.
-                                </p>
-                                <p class="mb-2"><b>Advisor: <small>Professor Michael B. Adinotey</small></b></p>
-                            </div>
-                            <div class="position-relative mb-4">
-                                <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                                <h5 class="mb-1"><a target="_blank" href="#">Compiling brain enhancers of <i>shox 2</i> from both published data and enhancer browsers.</a></h5>
-                                <p class="text-justify" style="text-align: justify;">Transcription factors (TFs) play a pivotal role in
-                                    molecular biology by controlling the transcription of
-                                    genetic information into messenger RNA through specific
-                                    DNA binding. Homeobox genes, categorized into various
-                                    groups, are vital for the regulation of morphogenesis
-                                    and cell differentiation. <i>Shox 2</i> (short stature homeobox
-                                    2), a member of the PRD class of homeobox genes, has
-                                    been extensively characterized as a transcriptional
-                                    regulator involved in pattern formation in invertebrates
-                                    and vertebrates. Notably, <i>shox 2</i> is crucial for the
-                                    expression of sonic hedgehog (shh) in dorsal-residing
-                                    Purkinje cells and is essential for normal cerebellar
-                                    development. The complex embryonic expression pattern of
-                                    <i>shox 2</i> suggests its involvement in craniofacial, limb,
-                                    brain, and heart development.
-                                </p>
-                                <p class="mb-2"><b>Advisor: <small>Dr. Samuel Abassah Oppong</small></b></p>
-                            </div>
-                            <div class="position-relative mb-4">
-                                <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                                <h5 class="mb-1"><a target="_blank" href="#">
-                                    Application of Computational Methods and Artificial Intelligence (AI) 
-                                    in the Identification of Predictive and Prognostic Cancer Biomarkers 
-                                    for Cancer Treatment
-                                </a></h5>
-                                <p class="text-justify" style="text-align: justify;">
-                                    Cancer remains a significant global health challenge, 
-                                    with millions of cases diagnosed annually and a growing 
-                                    need for more effective treatment strategies. Predictive 
-                                    and prognostic cancer biomarkers play an essential role 
-                                    in enhancing personalized medicine, allowing clinicians 
-                                    to make informed treatment decisions tailored to individual 
-                                    patient profiles. Predictive biomarkers help identify patients 
-                                    most likely to respond to specific therapies, while prognostic 
-                                    biomarkers provide information on the likely course of the disease, 
-                                    regardless of treatment. However, identifying 
-                                    these biomarkers is complex due to cancer’s heterogeneous nature and 
-                                    the vast amount of multi-omics data generated from cancer research.
-                                    Computational methods and artificial intelligence (AI) have emerged 
-                                    as crucial tools in overcoming these challenges, providing sophisticated
-                                    techniques to analyze large datasets and identify relevant biomarkers. AI models can accelerate the discovery of predictive 
-                                    and prognostic biomarkers by recognizing patterns that are often undetectable 
-                                    by conventional approaches. This paper explores the 
-                                    application of AI in cancer biomarker discovery and its transformative 
-                                    potential for cancer treatment personalization.
-                                </p>    
-                                <p class="mb-2"><b>Advisor: <small>Eugene Konadu Yiadom</small></b></p>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Research Experience End -->
-
-                    <!-- Research Interest Start -->
-                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Research Interest</h1>
-                        <div class="owl-carousel testimonial-carousel">
-                            <div class="text-left">
-                                <p class="fs-4 mb-4">
-                                    Investigate the genomics of cancer, including 
-                                    the identification of driver mutations, biomarker 
-                                    discovery, and personalized medicine approaches.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <i class="fa fa-3x fa-quote-right text-primary mb-4"></i>
-                                    <div class="ps-3">
-                                        <p class="text-primary fs-5 mb-1">Cancer Biology</p>
-                                        <i>Genomics</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-left">
-                                <p class="fs-4 mb-4">
-                                    In vitro and in silico studies of natural products as potential 
-                                    targets of Hepatitis C virus and Hepatitis B virus to minimize 
-                                    cirrhosis and liver cancer and promote liver health.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <i class="fa fa-3x fa-quote-right text-primary mb-4"></i>
-                                    <div class="ps-3">
-                                        <p class="text-primary fs-5 mb-1">Biomedical Informatics</p>
-                                        <i>Bioinformatics</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-left">
-                                <p class="fs-4 mb-4">
-                                    Advancements in Diabetes Care, harnessing interdisciplinary 
-                                    synergy between Gene therapy, bioinformatics, and 
-                                    precision molecular interventions.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <i class="fa fa-3x fa-quote-right text-primary mb-4"></i>
-                                    <div class="ps-3">
-                                        <p class="text-primary fs-5 mb-1">Computational Biology<p>
-                                        <i>Bioinformatics</i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-left">
-                                <p class="fs-4 mb-4">
-                                    Structural-based virtual screening to identify potential 
-                                    inhibitors of sars-cov-2 main proteases 
-                                    (m-pro or 3-chymotrypsin-like and papain-like) 
-                                    from both natural products and synthetic drugs.
-                                </p>
-                                <div class="d-flex align-items-center">
-                                    <i class="fa fa-3x fa-quote-right text-primary mb-4"></i>
-                                    <div class="ps-3">
-                                        <p class="text-primary fs-5 mb-1">Biodata Analysis</p>
-                                        <i>Pharmacology</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Research Interest End -->
-
-                    <!-- Subscribe Start -->
-                    <section class="wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="bg-secondary text-center p-5">
-                            <h1 class="text-white font-weight-bold">Subscribe My Newsletter</h1>
-                            <p class="text-white">Subscribe and get my latest article in your inbox</p>
-                            <div class="position-relative w-100">
-                                <input id="email-input" class="form-control bg-dark border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email">
-                                <button id="subscribe-btn" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Subscribe End -->
-
-                    <!-- Services Start -->
-                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Other Projects</h1>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>
-                                    <h5 class="mb-2">Unihub Mall</h5>
-                                    <p class="mb-0">An E-commerce website for various Universities in Ghana. This app is still under construction and we hope to complete soon, to make students life on campus hustle-free.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <i class="fab fa-2x fa-android mx-auto mb-4"></i>
-                                    <h5 class="mb-2">E-Clinik</h5>
-                                    <p class="mb-0">E-Clinik is an electronic hospital administrative system that implement features from artificial intelligence and machine learning, to aid in patients or clients care.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <i class="fa fa-2x fa-search mx-auto mb-4"></i>
-                                    <h5 class="mb-2">Pharmaco-Plant Analyzer</h5>
-                                    <p class="mb-0">Pharmaco-Plant is an analyzer that implements bioinformatics, pharmacology, Artificial Intelligence and Machine Learning features to analyze medicinal plants for medicinal purposes.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <i class="fa fa-2x fa-edit mx-auto mb-4"></i>
-                                    <h5 class="mb-2">Drek-Tech Foundation</h5>
-                                    <p class="mb-0">Drek-Teck Foundation aims to mentor Africans (especially, Ghanaians), in information technology.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Services End -->
-
-                    <!-- Gallery Start -->
-                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 class="title pb-3 mb-5">Gallery</h1>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-12 text-center mb-2">
-                                        <ul class="list-inline mb-4" id="portfolio-flters">
-                                            <li class="btn btn-secondary active"  data-filter="*"><i class="fa fa-star me-2"></i>All</li>
-                                            <li class="btn btn-secondary" data-filter=".research"><i class="fa fa-laptop-code me-2"></i>Research Projects</li>
-                                            <li class="btn btn-secondary" data-filter=".personal"><i class="fa fa-mobile-alt me-2"></i>Personal</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row portfolio-container">
-                                    <div class="col-md-6 mb-4 portfolio-item research">
-                                        <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/bind_pla2.jpg" alt="">
-                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/bind_pla2.jpg" data-lightbox="portfolio">
-                                                    <i class="bi bi-plus text-light"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4 portfolio-item research">
-                                        <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/neem_leaves.jpg" alt="">
-                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/neem_leaves.jpg" data-lightbox="portfolio">
-                                                    <i class="bi bi-plus text-light"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4 portfolio-item research">
-                                        <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/20190926_112528.jpg" alt="">
-                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/20190926_112528.jpg" data-lightbox="portfolio">
-                                                    <i class="bi bi-plus text-light"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4 portfolio-item personal">
-                                        <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/grp.jpg" alt="">
-                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/grp.jpg" data-lightbox="portfolio">
-                                                    <i class="bi bi-plus text-light"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Portfolio End -->
-
-                    <!-- Contact Start -->
-                    <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
-                        <h1 class="title pb-3 mb-5">Contact Eugene</h1>
-                        <p class="mb-4">For more information, please do not hesitate. Contact me with your details. Ensure to fill all fields. Looking forward to your message.</p>
-                        <form id="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0 bg-secondary" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control border-0 bg-secondary" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0 bg-secondary" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="button" id="send-message-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </section>
-                    <!-- Contact End -->
-
-                    <!-- Footer Start -->
-                    <section class="wow fadeIn" data-wow-delay="0.1s">
-                        <div class="bg-secondary text-light text-center p-5">
-                            <div class="d-flex justify-content-center mb-4">
-                                <a class="btn btn-dark btn-square mx-1" href="https://twitter.com/EugeneKonaduYi1"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="https://www.facebook.com/eugene.konadu.14"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="https://www.linkedin.com/in/eugene-konadu-yiadom-11b4b5151?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="https://www.instagram.com/dreky_wan"><i class="fab fa-instagram"></i></a>
-                            </div>
-                            <div class="d-flex justify-content-center mb-3">
-                                <a class="text-light px-3 border-end" href="#">Privacy</a>
-                                <a class="text-light px-3 border-end" href="#">Terms</a>
-                                <a class="text-light px-3 border-end" href="#">FAQs</a>
-                                <a class="text-light px-3" href="#">Help</a>
-                            </div>
-							
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							<p class="m-0">&copy; All Rights Reserved. Designed by <a href="https://htmlcodex.com">Dreky Wan</a></p>
-                        </div>
-                    </section>
-                    <!-- Footer End -->
+                <div class="col-md-6 mb-2 portfolio-item research">
+                  <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/neem_leaves.jpg" alt="Neem leaves — Azadirachta indica" style="border-radius:var(--r-md)">
+                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                      <a href="img/neem_leaves.jpg" data-lightbox="portfolio" data-title="Azadirachta indica (Neem)"><i class="bi bi-plus-circle text-light" style="font-size:2.5rem"></i></a>
+                    </div>
+                  </div>
                 </div>
+                <div class="col-md-6 mb-2 portfolio-item research">
+                  <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/20190926_112528.jpg" alt="Lab research" style="border-radius:var(--r-md)">
+                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                      <a href="img/20190926_112528.jpg" data-lightbox="portfolio" data-title="Laboratory Research Session"><i class="bi bi-plus-circle text-light" style="font-size:2.5rem"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2 portfolio-item personal">
+                  <div class="position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/grp.jpg" alt="Group photo" style="border-radius:var(--r-md)">
+                    <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                      <a href="img/grp.jpg" data-lightbox="portfolio" data-title="Group — Research Team"><i class="bi bi-plus-circle text-light" style="font-size:2.5rem"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+        </section>
+        <!-- ══ END GALLERY ═══════════════════════════════════ -->
 
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        
-        <script>
-            document.getElementById("send-message-btn").addEventListener("click", function() {
-                var name = document.getElementById("name").value;
-                var email = document.getElementById("email").value;
-                var subject = document.getElementById("subject").value;
-                var message = document.getElementById("message").value;
-                
-                if(name && email && subject && message) {
-                    var mailtoLink = 'mailto:eugene.yiadom@stu.ucc.edu.gh?subject=' + encodeURIComponent(subject) +
-                                    '&body=' + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage: " + message);
-                    window.location.href = mailtoLink;
-                } else {
-                    alert("Please fill out all fields.");
-                }
-            });
-        </script>
 
-        <script>
-            document.getElementById("subscribe-btn").addEventListener("click", function() {
-                var email = document.getElementById("email-input").value;
-                if(email) {
-                    // Open mailto link with dynamic email as body content
-                    window.location.href = 'mailto:eugene.yiadom@stu.ucc.edu.gh?subject=Newsletter%20Subscription&body=Please%20subscribe%20me%20to%20your%20newsletter.%20My%20email%20is%20' + encodeURIComponent(email);
-                } else {
-                    alert("Please enter a valid email address.");
-                }
-            });
-        </script>
+        <!-- ══ CONTACT ════════════════════════════════════════ -->
+        <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+          <span class="s-label">Get in Touch</span>
+          <h1 class="title pb-3 mb-2">Contact Eugene</h1>
+          <p style="color:var(--text-muted);margin-bottom:1.8rem">Open to opportunities, collaborations, and ambitious ideas. Fill all fields and I'll respond promptly.</p>
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
+          <!-- Quick contact links -->
+          <div class="mb-4">
+            <a class="contact-link" href="mailto:eugenekonadu58@gmail.com">
+              <div class="contact-link-icon">✉️</div>
+              <div><div class="contact-link-text">eugenekonadu58@gmail.com</div><div class="contact-link-sub">Primary Email</div></div>
+            </a>
+            <a class="contact-link" href="tel:+233591186949">
+              <div class="contact-link-icon">📱</div>
+              <div><div class="contact-link-text">+233 (0) 59 118 6949</div><div class="contact-link-sub">Ghana · WhatsApp Available</div></div>
+            </a>
+            <a class="contact-link" href="https://eugenekonadu.github.io/dreky/" target="_blank">
+              <div class="contact-link-icon">🌐</div>
+              <div><div class="contact-link-text">eugenekonadu.github.io/dreky</div><div class="contact-link-sub">GitHub Portfolio</div></div>
+            </a>
+          </div>
 
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+          <!-- Form -->
+          <form id="contact-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" placeholder="Your Name">
+                  <label for="name">Your Name</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" placeholder="Your Email">
+                  <label for="email">Your Email</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  <label for="subject">Subject</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a message here" id="message" style="height:180px"></textarea>
+                  <label for="message">Message</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="button" id="send-message-btn">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- ══ END CONTACT ═══════════════════════════════════ -->
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+
+        <!-- ══ FOOTER ═════════════════════════════════════════ -->
+        <section class="wow fadeIn" data-wow-delay="0.1s">
+          <div class="bg-secondary text-light text-center p-5">
+            <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--gold);margin-bottom:1rem;letter-spacing:0.05em">Dreky.</div>
+            <div class="d-flex justify-content-center mb-4 gap-2">
+              <a class="btn btn-dark btn-square" href="https://twitter.com/EugeneKonaduYi1" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-dark btn-square" href="https://www.facebook.com/eugene.konadu.14" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-dark btn-square" href="https://www.linkedin.com/in/eugene-konadu-yiadom-11b4b5151" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a class="btn btn-dark btn-square" href="https://www.instagram.com/dreky_wan" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-dark btn-square" href="https://eugenekonadu.github.io/dreky/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="d-flex justify-content-center mb-3 flex-wrap gap-3">
+              <a href="#">Privacy</a>
+              <a href="#">Terms</a>
+              <a href="eky.html">Statement of Purpose</a>
+              <a href="in_silico.html">Research</a>
+            </div>
+            <p class="m-0">&copy; 2025 All Rights Reserved. Designed by <a href="https://eugenekonadu.github.io/dreky/">Dreky Wan</a></p>
+          </div>
+        </section>
+        <!-- ══ END FOOTER ════════════════════════════════════ -->
+
+      </div>
+      <!-- ─── END MAIN CONTENT ─────────────────────────────── -->
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/typed/typed.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Template JS -->
+  <script src="js/main.js"></script>
+</body>
 </html>
